@@ -1,5 +1,7 @@
 {
   "name": "LogicalStudies",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
