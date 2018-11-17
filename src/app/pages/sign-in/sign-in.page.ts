@@ -10,6 +10,7 @@ export class SignInPage implements OnInit {
   validationConfig: { [key: string]: any; } = {};
   loginForm: FormGroup;
   keepMeLogin: boolean = false;
+  appName = 'Logical Studies';
   constructor(private formBuilder:FormBuilder) {
     this.validationConfig = ValidationConfig.getLoginConfig();
     this.loginForm = this.formBuilder.group(this.validationConfig);

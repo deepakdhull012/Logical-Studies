@@ -1,4 +1,5 @@
 $color-primary: #126092;
+$color-white: #fff;
 $icon-size: 24px;
 
 $padding-small: 5px;
@@ -7,16 +8,59 @@ $padding-large: 15px;
 
 $margin-small: 5px;
 $margin-medium: 10px;
-$margin-large: 15px;
+$margin-large: 20px;
+$margin-extraLarge: 30px;
 
+.app-logo {
+  margin-top: $margin-extraLarge;
+}
 .login-form {
-  margin-top: 60px;
+  margin-top: 40px;
+}
+.login-btn {
+  margin-top: $margin-extraLarge;
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 20px;
+  background: $color-primary;
+  color: $color-white;
+  font-size: 16px;
+}
+.keep-me-login-holder {
+  margin-top: $margin-medium;
+  border-bottom: none;
+}
+.forgot-password {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: $color-primary;
+}
+.social-login-btn {
+  padding: 10px;
+  border-radius: 40px;
+  width: 100%;
+}
+.facebook-login-btn {
+  background: #3b5998;
+}
+.google-login-btn {
+  background: #DD4B39;
+}
+.social-login-icon {
+  font-size: 28px;
+  color: $color-white;
+}
+.social-buttons {
+  margin-top: $margin-medium;
+}
+.register-link {
+  margin-top: 30px;
+  font-size: 18px;
+  color: $color-primary;
+}
+.correct-icon {
+  font-size: 20px;
+  color: #0f0;
 }
 
-::ng-deep .native-input {
-  padding-left: 30px !important;
-}
-
-.native-input {
-  padding-left: 30px !important;
-}

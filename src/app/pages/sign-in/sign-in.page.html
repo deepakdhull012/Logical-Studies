@@ -1,21 +1,46 @@
 <ion-content padding>
-    <img src="assets/imgs/logo2.png"/>
+    <img class="app-logo" src="assets/imgs/logo2.png" />
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
-        <label class = "item item-input">
-            <ion-icon name="person" class="left-icon"></ion-icon>
-            <ion-input text-lowercase class="input-class" type="email" formControlName="email" placeholdar="email"></ion-input>
-        </label>
-        <label class = "item item-input">
-            <ion-icon name="lock" class="left-icon"></ion-icon>
-            <ion-icon name="ios-eye" class="right-icon" (mousedown)="showPassword()"></ion-icon>
-            <ion-input class="input-class" type="password" formControlName="password" placeholdar="password"></ion-input>
-            
-        </label>
-        <ion-button ion-item block outline type="submit">Login</ion-button>
-        <ion-item class="keep-me-holder">
-            <ion-label class="font-primary">Keep me logged in</ion-label>
-            <ion-checkbox class="keep-me-login-box" [(ngModel)]="keepMeLogin"></ion-checkbox>
+        <ion-item>
+            <ion-label floating>
+                <ion-icon name="person" class="input-icon"></ion-icon>
+            </ion-label>
+            <ion-input text-lowercase type="email" formControlName="email" placeholder="Email"></ion-input>
+            <ion-label floating *ngIf="loginForm.get('email').valid && loginForm.get('email').touched">
+                <ion-icon name="ios-checkmark" class="correct-icon"></ion-icon>
+            </ion-label>
         </ion-item>
-        <a ion-item text-center>Forgot Password?</a>
+        <ion-item>
+            <ion-label floating>
+                <ion-icon name="lock" class="input-icon"></ion-icon>
+            </ion-label>
+            <ion-input text-lowercase type="password" formControlName="password" placeholder="Password"></ion-input>
+            <ion-label floating>
+                <ion-icon name="ios-eye" class="input-icon" (mousedown)="showPassword()"></ion-icon>
+            </ion-label>
+        </ion-item>
+        <button class="login-btn" type="submit">Login</button>
+        <ion-item no-lines class="keep-me-login-holder">
+            <ion-checkbox class="keep-me-login-box"></ion-checkbox>
+            <ion-label class="font-primary">Keep me logged in</ion-label>
+        </ion-item>
+        <div text-center class="forgot-password">
+            Forgot Password?
+        </div>
+        <ion-row class="social-buttons">
+            <ion-col>
+                <button ion-button icon-start class="social-login-btn facebook-login-btn">
+                    <ion-icon name="logo-facebook" class="social-login-icon"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-start class="social-login-btn google-login-btn">
+                    <ion-icon name="logo-google" class="social-login-icon"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+        <div text-center class="register-link">
+            New To {{appName}}? Register Here.
+        </div>
     </form>
 </ion-content>

@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
 
 import { SignInPage } from './sign-in.page';
@@ -38,6 +37,7 @@ const signInRoutes: Routes = [
     CoreModule,
     RouterModule.forChild(signInRoutes)
   ],
-  declarations: [SignInPage, RegisterComponent, ForgotPasswordComponent, ChangePasswordComponent]
+  declarations: [SignInPage, RegisterComponent, ForgotPasswordComponent, ChangePasswordComponent],
+  schemas:      [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class SignInPageModule {}

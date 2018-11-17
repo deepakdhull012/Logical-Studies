@@ -29,24 +29,8 @@ $margin-large: 15px;
   color: $color-primary;
 }
 
-.input-class {
-  position: relative;
-  border-bottom: 1px solid $color-primary;
-  color: $color-primary;
-}
-
-.left-icon {
-  position: absolute;
+.input-icon {
   font-size: $icon-size;
   padding-top: $padding-small;
   color: $color-primary;
-  left: 15px;
-}
-
-.right-icon {
-  position: absolute;
-  font-size: $icon-size;
-  padding-top: $padding-small;
-  color: $color-primary;
-  right: 15px;
 }
