@@ -13,17 +13,13 @@ export class AuthGuard implements CanActivate {
     private authService: AuthService,
     private router: Router
   ) {
-
   }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      console.log('Guard called');
     if (this.authService.isLoggedIn()){
-      console.log('user loged in true direct to landing')
       return true;
     } else {
-      console.log('will redirect to login')
       this.router.navigate(['/verify']);
     }
     return false;

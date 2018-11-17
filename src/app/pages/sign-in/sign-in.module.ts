@@ -9,6 +9,7 @@ import { SignInPage } from './sign-in.page';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { CoreModule } from './../../modules/core/core.module';
 
 const signInRoutes: Routes = [
   {
@@ -34,6 +35,7 @@ const signInRoutes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    CoreModule,
     RouterModule.forChild(signInRoutes)
   ],
   declarations: [SignInPage, RegisterComponent, ForgotPasswordComponent, ChangePasswordComponent]
