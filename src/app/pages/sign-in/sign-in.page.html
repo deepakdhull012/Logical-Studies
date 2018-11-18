@@ -23,7 +23,9 @@
                 <ion-icon *ngIf="passwordMode === 'text'" name="ios-eye" class="input-icon"></ion-icon>            
             </ion-label>
         </ion-item>
-        <ion-button expand="block" class="login-btn" type="submit">Login</ion-button>
+
+        <ion-button expand="block" class="login-btn" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+
         <ion-item lines="none" class="keep-me-login-holder">
             <ion-checkbox class="keep-me-login-box" formControlName="keepMeLogin"></ion-checkbox>
             <ion-label class="font-primary">Keep me logged in</ion-label>

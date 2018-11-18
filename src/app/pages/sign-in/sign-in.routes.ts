@@ -12,7 +12,7 @@ export const signInRoutes: Routes = [
       component: ContainerComponent,
       children: [
         {
-          path: '',
+          path: 'signIn',
           component: SignInPage
         },
         {
@@ -26,6 +26,11 @@ export const signInRoutes: Routes = [
         {
           path: 'changePassword',
           component: ChangePasswordComponent
+        },
+        {
+          path: '',
+          redirectTo: 'signIn',
+          pathMatch: 'full'
         }
       ]
     },

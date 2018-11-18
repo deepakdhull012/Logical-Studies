@@ -55,7 +55,7 @@ export class SignInPage implements OnInit, AfterViewInit {
     this.password.nativeElement.attributes.type.nodeValue = this.passwordMode;
   }
   forgotPassword() {
-    console.log('Forgot password');
+    this.router.navigate(['verify', 'forgotPassword']);
   }
   facebookLogin() {
     console.log('Facebook login');
@@ -64,7 +64,7 @@ export class SignInPage implements OnInit, AfterViewInit {
     console.log('Gmail login');
   }
   registerNewUser() {
-    console.log('Register New User');
+    this.router.navigate(['verify', 'register']);
   }
 
   }
