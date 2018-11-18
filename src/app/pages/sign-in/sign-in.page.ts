@@ -14,6 +14,7 @@ export class SignInPage implements OnInit, AfterViewInit {
   keepMeLogin: boolean = false;
   appName = 'Logical Studies';
   passwordMode: string = 'password';
+  colorRed = '#f00';
   @ViewChild('password',{ read: ElementRef }) password: ElementRef;
   constructor(
     private formBuilder:FormBuilder,
@@ -29,6 +30,7 @@ export class SignInPage implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
     this.passwordMode = this.password.nativeElement.attributes.type.nodeValue;
+    console.log(this.loginForm.get('email'));
   }
   login() {
     console.log(this.loginForm.value,this.loginForm.valid);
@@ -43,9 +45,7 @@ export class SignInPage implements OnInit, AfterViewInit {
 
   }
   switchPasswordMode() {
-    console.log('called');
     this.passwordMode = this.password.nativeElement.attributes.type.nodeValue;
-    console.log(this.passwordMode)
     if (this.passwordMode == 'password') {
       this.passwordMode = 'text';
     }
