@@ -11,8 +11,7 @@ export class AuthService {
    
    isLoggedIn() {
     this.loggedInUserId = localStorage.getItem('loggedInUserId');
-    console.log('id',this.loggedInUserId);
-    if (this.loggedInUserId) {
+    if (this.loggedInUserId != 'null') {
       return true;
     }
     return false;

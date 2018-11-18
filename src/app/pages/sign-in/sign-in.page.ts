@@ -39,6 +39,7 @@ export class SignInPage implements OnInit, AfterViewInit {
     this.signInService.loginUser(loginInfo).subscribe((loginResponse) => {
       if (loginResponse) {
         localStorage.setItem('loggedInUserId',loginResponse._id);
+        localStorage.setItem('keepMeLogin',loginFormValue.keepMeLogin);
         this.router.navigate(['../landing'])
       }
     });
