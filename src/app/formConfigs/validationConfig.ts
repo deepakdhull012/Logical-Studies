@@ -10,8 +10,9 @@ export class ValidationConfig {
     static getLoginConfig(): { [key: string]: any; } {
         return {
             // tslint:disable-next-line:max-line-length
-            email: [null, [Validators.email]],
-            password: [null,[Validators.required]]
+            email: [null, [Validators.email, Validators.required]],
+            password: [null,[Validators.required]],
+            keepMeLogin: [true,[Validators.required]]
         }
     }
 }
