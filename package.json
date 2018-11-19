@@ -70,8 +70,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-facebook4": {
-        "APP_ID": "262571107787135",
-        "APP_NAME": "LogicalStudies"
+        "APP_ID": "123456789",
+        "APP_NAME": "myApplication"
       },
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "440503878558-oshtp40fr6rtg9q4mka9b1uue7no3mda.apps.googleusercontent.com"
