@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
+import { Facebook } from '@ionic-native/facebook/ngx';
+
 import { SignInPage } from './sign-in.page';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -20,6 +22,15 @@ import { ContainerComponent } from './container/container.component';
     CoreModule,
     RouterModule.forChild(signInRoutes)
   ],
-  declarations: [SignInPage, RegisterComponent, ForgotPasswordComponent, ChangePasswordComponent, ContainerComponent]
+  declarations: [
+    SignInPage,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
+    ContainerComponent
+  ],
+    providers: [
+      Facebook
+    ]
 })
 export class SignInPageModule {}

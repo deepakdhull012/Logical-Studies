@@ -1,14 +1,18 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ValidationConfig } from './../../formConfigs/validationConfig';
 import { SignInService } from '../../services/sign-in.service';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.page.html',
   styleUrls: ['./sign-in.page.scss'],
 })
+
 export class SignInPage implements OnInit, AfterViewInit {
+
   validationConfig: { [key: string]: any; } = {};
   loginForm: FormGroup;
   keepMeLogin: boolean = false;
@@ -16,10 +20,12 @@ export class SignInPage implements OnInit, AfterViewInit {
   passwordMode: string = 'password';
   colorRed = '#f00';
   @ViewChild('password',{ read: ElementRef }) password: ElementRef;
+
   constructor(
     private formBuilder:FormBuilder,
     private signInService: SignInService,
-    private router: Router
+    private router: Router,
+    private facbook: Facebook
     ) {
     this.validationConfig = ValidationConfig.getLoginConfig();
     this.loginForm = this.formBuilder.group(this.validationConfig);
@@ -59,7 +65,9 @@ export class SignInPage implements OnInit, AfterViewInit {
     this.router.navigate(['verify', 'forgotPassword']);
   }
   facebookLogin() {
-    console.log('Facebook login');
+    this.facbook.login(['public_profile', 'user_friends', 'email'])
+  .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
+  .catch(e => console.log('Error logging into Facebook', e));
   }
   googleLogin() {
     console.log('Gmail login');

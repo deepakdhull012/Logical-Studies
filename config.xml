@@ -39,6 +39,10 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <config-file parent="/resources" target="./res/values/strings.xml">
+            <string name="fb_app_id">262571107787135</string>
+            <string name="fb_app_name">LogicalStudies</string>
+        </config-file>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -89,5 +93,5 @@
     <plugin name="cordova-plugin-googleplus" spec="5.3.2">
         <variable name="REVERSED_CLIENT_ID" value="440503878558-oshtp40fr6rtg9q4mka9b1uue7no3mda.apps.googleusercontent.com" />
     </plugin>
-    <engine name="android" spec="~7.1.2" />
+    <engine name="android" spec="7.1.2" />
 </widget>
