@@ -39,7 +39,7 @@ export class AppComponent {
   }
 
   logout() {
-    localStorage.setItem('loggedInUserId',null);
+    localStorage.setItem('loggedInUserId', null);
     this.router.navigate(['/verify']);
   }
 }

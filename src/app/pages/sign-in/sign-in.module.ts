@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 import { SignInPage } from './sign-in.page';
 import { RegisterComponent } from './register/register.component';
@@ -30,7 +31,8 @@ import { ContainerComponent } from './container/container.component';
     ContainerComponent
   ],
     providers: [
-      Facebook
+      Facebook,
+      GooglePlus
     ]
 })
 export class SignInPageModule {}

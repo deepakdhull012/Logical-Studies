@@ -8,12 +8,11 @@ export class AuthService {
   constructor() {
 
    }
-   
    isLoggedIn() {
     this.loggedInUserId = localStorage.getItem('loggedInUserId');
-    if (this.loggedInUserId != 'null') {
-      return true;
+    if (this.loggedInUserId === 'null' || this.loggedInUserId === null || this.loggedInUserId === undefined) {
+      return false;
     }
-    return false;
+    return true;
    }
 }
