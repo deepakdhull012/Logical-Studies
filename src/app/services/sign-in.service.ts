@@ -17,6 +17,6 @@ export class SignInService {
         'Content-Type':  'application/json',
       })
     };
-    return this.http.post<any>(`${this.server}login`, loginInfo, httpOptions);
+    return this.http.post<any>(`${this.server}login`, loginInfo, httpOptions).toPromise();
   }
 }

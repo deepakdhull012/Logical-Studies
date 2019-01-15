@@ -6,6 +6,44 @@
     <ion-title>Landing</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
+  <ul class="home-menu">
+    <li>
+      <ion-card class="menu-card" (click)="goToSubjectpage()">
+        <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/mcq.jpg?alt=media&token=82b37528-71cf-4c19-b9ee-ba7660149a05" onError="this.src='assets/icon/loading.gif'"/>
+        <div class="overlay">Topic Wise Questions</div>
+    </ion-card>
+  </li>
+  <li>
+    <ion-card class="menu-card" (click)="goToVideos()">
+      <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/video-tutorial.png?alt=media&token=84ec7798-f0c3-4e6d-9d08-cac030c710ca" onError="this.src='assets/icon/loading.gif'"/>
+      <div class="overlay">Topic Wise Video Tutorials</div>
+    </ion-card>
+  </li>
+  <li>
+    <ion-card class="menu-card" (click)="gotoMockTestPage()">
+      <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/mock-test.png?alt=media&token=8f7e0d8a-6558-4da4-9ed3-8054b0dbd900" onError="this.src='assets/icon/loading.gif'"/>
+      <div class="overlay">Mock Tests</div>
+    </ion-card>
+  </li>
+  <li>
+    <ion-card class="menu-card" (click)="gotoPreviousYearTestPage()">
+      <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/previous-year-paper.jpg?alt=media&token=ac06ed31-8d3d-4f3a-91be-b3db9ed69cdf" onError="this.src='assets/icon/loading.gif'"/>
+      <div class="overlay">Previous Year Question Papers</div>
+    </ion-card>
+  </li>
+  <li>
+    <ion-card class="menu-card">
+      <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/current-affairs.jpg?alt=media&token=94ad8fc8-9c7e-4168-ac11-42576177f138" onError="this.src='assets/icon/loading.gif'"/>
+      <div class="overlay">Current Affairs</div>
+    </ion-card>
+  </li>
+  <li>
+    <ion-card class="menu-card">
+      <img src="https://firebasestorage.googleapis.com/v0/b/testyou-1a6bc.appspot.com/o/quiz-today.jpg?alt=media&token=8f37b0f6-cd5e-4f8c-abb8-5c0579a897b7" onError="this.src='assets/icon/loading.gif'"/>
+      <div class="overlay">Daily Quiz</div>
+    </ion-card>
+  </li>
 
+  </ul>
 </ion-content>

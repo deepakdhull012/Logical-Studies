@@ -5,23 +5,23 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'tabs',
     pathMatch: 'full'
-  },
-  {
-    path: 'landing',
-    loadChildren: './pages/landing/landing.module#LandingPageModule',
-    canActivate: [AuthGuard]
   },
   {
     path: 'verify',
     loadChildren: './pages/sign-in/sign-in.module#SignInPageModule'
   },
-  { path: 'landing', loadChildren: './pages/landing/landing.module#LandingPageModule' }
+  {
+    path: 'tabs',
+    loadChildren: './pages/tabs/tabs.module#TabsPageModule',
+    canActivate: [AuthGuard]
+  },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

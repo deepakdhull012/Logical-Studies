@@ -1,0 +1,24 @@
+.home-menu{
+  list-style: none;
+  padding: 0;
+  margin-top: 1px;
+}
+.menu-card{
+  margin: 0;
+  width:100%;
+  position: relative;
+}
+.home-menu li ion-card .overlay{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgb(22,55,83);
+  padding: 10px 5px;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.home-menu li{
+  margin-bottom: 10px;
+}
+

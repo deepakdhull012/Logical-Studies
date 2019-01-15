@@ -4,7 +4,8 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ValidationConfig } from './../../formConfigs/validationConfig';
-import { SignInService } from '../../services/sign-in.service';
+import { SignInService } from './../../services/sign-in.service';
+import { CommonService } from './../../services/common.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,7 +28,8 @@ export class SignInPage implements OnInit, AfterViewInit {
     private signInService: SignInService,
     private router: Router,
     private facbook: Facebook,
-    private googlePlus: GooglePlus
+    private googlePlus: GooglePlus,
+    private commonService: CommonService
   ) {
     
   }
@@ -41,15 +43,23 @@ export class SignInPage implements OnInit, AfterViewInit {
     console.log(this.loginForm.get('email'));
   }
   login() {
+    this.commonService.showLoader('Please wait logging in..');
     console.log(this.loginForm.value, this.loginForm.valid);
     const loginFormValue = this.loginForm.value;
     const loginInfo = JSON.stringify({ email: loginFormValue.email, password: loginFormValue.password });
-    this.signInService.loginUser(loginInfo).subscribe((loginResponse) => {
+    this.signInService.loginUser(loginInfo).then((loginResponse) => {
+      this.commonService.dismissLoader();
       if (loginResponse) {
+        this.commonService.showToast('Login Success');
         localStorage.setItem('loggedInUserId', loginResponse._id);
         localStorage.setItem('keepMeLogin', loginFormValue.keepMeLogin);
-        this.router.navigate(['../landing']);
+        this.router.navigate(['../tabs']);
+      } else {
+        // Show Login Failure Toast
+        this.commonService.showToast('Login Failed');
       }
+    }).catch((err) => {
+      this.commonService.dismissLoader();
     });
 
   }
