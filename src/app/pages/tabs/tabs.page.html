@@ -1,14 +1,24 @@
+
 <ion-tabs>
-  <ion-tab label="Home" icon="home" href="/tabs/(landing:landing)">
-    <ion-router-outlet name="landing"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab label="Home2" icon="home" href="/tabs/(newsFeed:newsFeed)">
-    <ion-router-outlet name="newsFeed"></ion-router-outlet>
-  </ion-tab>
-  <ion-tab label="Home3" icon="home" href="/tabs/(profile:profile)">
-    <ion-router-outlet name="profile"></ion-router-outlet>
-  </ion-tab>
+    <ion-router-outlet></ion-router-outlet>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home" (click)="goTo('landing')">
+      <ion-label>Home</ion-label>
+      <ion-icon name="home"></ion-icon>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="newsFeed" (click)="goTo('newsFeed')">
+      <ion-label>News Feed</ion-label>
+      <ion-icon name="settings"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" (click)="goTo('profile')">
+      <ion-label>Profile</ion-label>
+      <ion-icon name="settings"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
 </ion-tabs>
-
-
 

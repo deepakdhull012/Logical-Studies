@@ -11,20 +11,17 @@ export const tabsRoutes: Routes = [
         children: [
             {
                 path: 'landing',
-                outlet: 'landing',
-                loadChildren: './pages/landing/landing.module#LandingPageModule',
+                loadChildren: './../../pages/landing/landing.module#LandingPageModule',
                 canActivate: [AuthGuard]
             },
             {
                 path: 'newsFeed',
-                outlet: 'newsFeed',
-                loadChildren: './pages/news-feed/news-feed.module#NewsFeedPageModule',
+                loadChildren: './../../pages/news-feed/news-feed.module#NewsFeedPageModule',
                 canActivate: [AuthGuard]
             },
             {
                 path: 'profile',
-                outlet: 'profile',
-                loadChildren: './pages/profile/profile.module#ProfilePageModule',
+                loadChildren: './../../pages/profile/profile.module#ProfilePageModule',
                 canActivate: [AuthGuard]
             },
             {
