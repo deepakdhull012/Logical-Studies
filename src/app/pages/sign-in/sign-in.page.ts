@@ -29,12 +29,12 @@ export class SignInPage implements OnInit, AfterViewInit {
     private facbook: Facebook,
     private googlePlus: GooglePlus
   ) {
-    this.validationConfig = ValidationConfig.getLoginConfig();
-    this.loginForm = this.formBuilder.group(this.validationConfig);
+    
   }
 
   ngOnInit() {
-
+    this.validationConfig = ValidationConfig.getLoginConfig();
+    this.loginForm = this.formBuilder.group(this.validationConfig);
   }
   ngAfterViewInit() {
     this.passwordMode = this.password.nativeElement.attributes.type.nodeValue;

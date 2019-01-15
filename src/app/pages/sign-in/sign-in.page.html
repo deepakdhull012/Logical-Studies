@@ -17,7 +17,7 @@
             <ion-label>
                 <ion-icon name="lock" class="input-icon"></ion-icon>
             </ion-label>
-            <ion-input  #password text-lowercase type="password" formControlName="password" placeholder="Password"></ion-input>
+            <ion-input  #password type="password" formControlName="password" placeholder="Password"></ion-input>
             <ion-label floating (click)="switchPasswordMode()">
                 <ion-icon *ngIf="passwordMode === 'password'" name="ios-eye-off" class="input-icon" ></ion-icon>
                 <ion-icon *ngIf="passwordMode === 'text'" name="ios-eye" class="input-icon"></ion-icon>            

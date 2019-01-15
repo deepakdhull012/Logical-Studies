@@ -1,0 +1,26 @@
+$color-primary: #126092;
+$color-white: #fff;
+$color-red: #f00;
+$icon-size: 24px;
+
+$padding-small: 5px;
+$padding-medium: 10px;
+$padding-large: 15px;
+
+$margin-small: 5px;
+$margin-medium: 10px;
+$margin-large: 20px;
+$margin-extraLarge: 30px;
+
+.correct-icon {
+    font-size: 32px;
+    color: #228b22;
+  }
+.wrong-icon {
+    font-size: 32px;
+    color: #f00;
+  }
+.signUp-btn {
+    margin-top: $margin-extraLarge;
+    font-size: 16px;
+  }

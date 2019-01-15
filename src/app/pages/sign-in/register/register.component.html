@@ -1,3 +1,51 @@
-<p>
-  register works!
-</p>
+<ion-content padding>
+  <form class="signup-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <!-- For User Name -->
+      <ion-item>
+          <ion-label floating>
+              <ion-icon name="contact" class="input-icon"></ion-icon>
+          </ion-label>
+          <ion-input type="text" formControlName="userName" placeholder="Full Name"></ion-input>
+      </ion-item>
+      <!-- For Email -->
+      <ion-item>
+          <ion-label floating>
+              <ion-icon name="person" class="input-icon"></ion-icon>
+          </ion-label>
+          <ion-input text-lowercase type="email" formControlName="email" placeholder="Email"></ion-input>
+          <ion-label floating *ngIf="signUpForm.get('email').valid && signUpForm.get('email').dirty">
+              <ion-icon name="ios-checkmark" class="correct-icon"></ion-icon>
+          </ion-label>
+          <ion-label floating *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').value != null">
+              <ion-icon name="ios-close" class="wrong-icon"></ion-icon>
+          </ion-label>
+      </ion-item>
+
+      <!-- Mobile -->
+      <ion-item>
+          <ion-label floating>
+              <ion-icon name="call" class="input-icon"></ion-icon>
+          </ion-label>
+          <ion-input  type="number" formControlName="mobile" placeholder="Mobile" minlength=10 maxlength=10></ion-input>
+      </ion-item>
+
+      <!-- Password -->
+      <ion-item>
+          <ion-label>
+              <ion-icon name="lock" class="input-icon"></ion-icon>
+          </ion-label>
+          <ion-input  #password type="password" formControlName="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+      <!--Confirm Password -->
+      <ion-item>
+          <ion-label>
+              <ion-icon name="lock" class="input-icon"></ion-icon>
+          </ion-label>
+          <ion-input  #password type="password" formControlName="confirmPassword" placeholder="Confirm Password"></ion-input>
+      </ion-item>
+      <!-- Sign Up Button -->
+      <ion-button expand="block" class="signUp-btn" type="submit" [disabled]="!signUpForm.valid">Sign Up</ion-button>
+
+  </form>
+</ion-content>
